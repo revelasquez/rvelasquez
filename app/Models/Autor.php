@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Autor extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
+
+    public function libros()
+    {
+        return $this->hasMany(Libro::class);
+    }
 }
